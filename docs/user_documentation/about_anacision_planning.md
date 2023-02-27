@@ -1,6 +1,6 @@
 # About anacision PLANNING
 
-anacision PLANNING is a lightweight advanced planning and scheduling (APS) solution which determines
+anacision PLANNING is a light-weight advanced planning and scheduling (APS) solution. It determines
 an automated allocation of production demands and production capacities. anacision PLANNING generates 
 optimal production plans that answer the following question:
 
