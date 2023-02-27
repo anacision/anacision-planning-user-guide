@@ -23,9 +23,10 @@ software such as ERP or MES systems.
 
 ## Usage
 
-Generating a production plan with anacision PLANNING requires three components. First, a PLANNING request json, 
-which creates a PLANNING job once it is posted to the API. Once the job has been optimized by the PLANNING algorithm, 
-its PLANNING job result, can be retrieved through the API.
+Generating a production plan with anacision PLANNING requires three steps:
+1. Creating a PLANNING request json. 
+2. Posting the PLANNING request json to the [API](https://planning.anacision.ai/), which is then optimized by the PLANNING algorithm.
+3. Getting the PLANNING job result.
 
 
 ![Illustration of possible end to end integration](user_flow.png)*Illustraion of a possible end to end integrated planning process.*
