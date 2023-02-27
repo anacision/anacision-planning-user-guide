@@ -2,26 +2,26 @@
 
 
 Guide on how to model standard use cases. Note that the requests that are illustrated in this section
-may be shortened due to readability. The fully functional PLANNING requests are linked and can be
-found [here](working_code_samples.md)
+may be shortened due to readability. The fully functional PLANNING requests can be
+found in the [functional code samples](working_code_samples.md).
 
 ## Production tasks
 
 The production tasks are the production processes that need to be scheduled. They can be single step processes or belong
 to a chain of multiple processing steps (e.g. 1. cutting raw material, 2. milling the raw cut, 3. painting the finished part).
-In this case, each of these steps needs to be modeled as a task and they can be linked through a predecessor successor relationship.
+In this case, each of these steps needs to be modeled as a task and they can be linked through a predecessor - successor relationship.
 
 This section highlights some ways of modeling certain use cases. Refer to the PLANNING API documentation ([https://planning.anacision.ai/](https://planning.anacision.ai/))
- to get an in depth
-description of the task object's attributes.
+ to get an in-depth description of the task object's attributes.
 
 ### Modeling multi-stage production
 
-Multi-stage production scenarios, can be modeled using the ```predecessor_task_ids``` field.
+Multi-stage production scenarios can be modeled using the ```predecessor_task_ids``` field.
 
 The following examples are NOT functional, as the tasks have no processing options. They only serve the purpose
 of illustrating how the predecessor - successor relationship can be used to model multi-stage production.
 
+#### Multi-stage example 1
 ```json hl_lines="12 19"
 {
   "tasks": [
@@ -48,10 +48,11 @@ of illustrating how the predecessor - successor relationship can be used to mode
 }
 ```
 
-This example represents three tasks that form a chain where the product is first cut, then milled and finally
+[Example 1](#multi-stage-example-1) represents three tasks that form a chain where the product is first cut, then milled and finally
 painted. It cannot be painted before it has been milled and the milling cannot start before the cutting.
 It is a typical flow shop scenario.
 
+#### Multi-stage example 2
 ```json hl_lines="17-18"
 {
   "tasks": [
@@ -77,16 +78,16 @@ It is a typical flow shop scenario.
 }
 ```
 
-This is an example of a processing chain where one step has multiple predecessors that are independent of each other.
+[Example 2](#multi-stage-example-2) is a processing chain where one step has multiple predecessors that are independent of each other.
 The assembly cannot start before the single parts have been milled. But the single parts do not have any other
-predecessor or successor relationship. As long as both parts are milled before the assembly starts, it is irrelevant
+predecessor - successor relationship. As long as both parts are milled before the assembly starts, it is irrelevant
 when the milling tasks take place.
 
 ### Setting allowed production windows
-In many planning and scheduling setups, there is some kind of coarse planning or material resource planning that dictates
-the time frame in which the task may be processed. The most common example for this is that the production has to take
+In many planning and scheduling setups, there may be coarse planning or material resource planning that dictates
+the time intervals in which tasks can be processed. The most common example is when the production has to take
 place close to the confirmed due date to avoid building up inventory. At the same time, the procurement of raw materials
-and the start of the processing of these materials need to be coordinated well.
+and the start of the processing of these materials must be well coordinated.
 
 The ```earliest_start_at``` attribute can be used to ensure that a task is not planned before the raw material has been sourced.
 In turn, the ````due_at```` attribute represents the confirmed due date. If possible, the task will be finished before the due date.
@@ -134,8 +135,8 @@ be modeled for each production slot within the station.
 ```
 
 In the code snippet above, the station is blocked until February 2nd at 1 pm. Therefore, the algorithm
-will not schedule any tasks before this timestamp. Also, all predecessors of ```task_01``` will have to wait
-until the task is finished. Likewise, the resource ```R11``` is blocked for the same time period.
+will not schedule any tasks before this timestamp. Also, all successors of ```task_01``` will have to wait
+until the task is finished. Likewise, one resource unit of resource ```R11``` is blocked for the same time period.
 
 ## Shift definitions
 There are three types of availability definitions: repeating shift times, planned downtimes (e.g. for maintenance) or
