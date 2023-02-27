@@ -9,19 +9,19 @@ found in the [functional code samples](working_code_samples.md).
 
 The production tasks are the production processes that need to be scheduled. They can be single step processes or belong
 to a chain of multiple processing steps (e.g. 1. cutting raw material, 2. milling the raw cut, 3. painting the finished part).
-In this case, each of these steps needs to be modeled as a task and they can be linked through a predecessor successor relationship.
+In this case, each of these steps needs to be modeled as a task and they can be linked through a predecessor - successor relationship.
 
 This section highlights some ways of modeling certain use cases. Refer to the PLANNING API documentation ([https://planning.anacision.ai/](https://planning.anacision.ai/))
- to get an in depth
-description of the task object's attributes.
+ to get an in-depth description of the task object's attributes.
 
 ### Modeling multi-stage production
 
-Multi-stage production scenarios, can be modeled using the ```predecessor_task_ids``` field.
+Multi-stage production scenarios can be modeled using the ```predecessor_task_ids``` field.
 
 The following examples are NOT functional, as the tasks have no processing options. They only serve the purpose
 of illustrating how the predecessor - successor relationship can be used to model multi-stage production.
 
+#### Multi-stage example 1
 ```json hl_lines="12 19"
 {
   "tasks": [
@@ -48,10 +48,11 @@ of illustrating how the predecessor - successor relationship can be used to mode
 }
 ```
 
-This example represents three tasks that form a chain where the product is first cut, then milled and finally
+[Example 1](#multi-stage-example-1) represents three tasks that form a chain where the product is first cut, then milled and finally
 painted. It cannot be painted before it has been milled and the milling cannot start before the cutting.
 It is a typical flow shop scenario.
 
+#### Multi-stage example 2
 ```json hl_lines="17-18"
 {
   "tasks": [
@@ -77,9 +78,9 @@ It is a typical flow shop scenario.
 }
 ```
 
-This is an example of a processing chain where one step has multiple predecessors that are independent of each other.
+[Example 2](#multi-stage-example-2) is a processing chain where one step has multiple predecessors that are independent of each other.
 The assembly cannot start before the single parts have been milled. But the single parts do not have any other
-predecessor or successor relationship. As long as both parts are milled before the assembly starts, it is irrelevant
+predecessor - successor relationship. As long as both parts are milled before the assembly starts, it is irrelevant
 when the milling tasks take place.
 
 ### Setting allowed production windows
