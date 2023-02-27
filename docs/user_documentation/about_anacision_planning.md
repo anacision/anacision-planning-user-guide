@@ -99,7 +99,6 @@ It includes the optimized production plan with the following information in json
 * Production KPIs, e.g.
     * Tardiness
     * Makespan
-    * Machine utilization
     * Changeover duration
 
 
