@@ -51,7 +51,6 @@ description of the whole data model.
 * **Open production tasks**: Production tasks that need to be fulfilled. They can be based on client orders or warehouse orders. 
  If there are multiple processing steps within an order, each step needs to be specified as a task. They can be linked
  through predecessor relationships. The task is mainly characterized through:
-    * Unique id for distinction between tasks
     * Earliest date after which the task can start
     * If applicable: Predecessor tasks that have to be processed directly before this task
     * Due date by which the task needs to be finished
