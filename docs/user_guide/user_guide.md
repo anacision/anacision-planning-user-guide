@@ -135,7 +135,7 @@ be modeled for each production slot within the station.
 ```
 
 In the code snippet above, the station is blocked until February 2nd at 1 pm. Therefore, the algorithm
-will not schedule any tasks before this timestamp. Also, all predecessors of ```task_01``` will have to wait
+will not schedule any tasks before this timestamp. Also, all successors of ```task_01``` will have to wait
 until the task is finished. Likewise, the resource ```R11``` is blocked for the same time period.
 
 ## Shift definitions
