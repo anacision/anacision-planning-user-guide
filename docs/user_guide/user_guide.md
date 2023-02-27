@@ -2,8 +2,8 @@
 
 
 Guide on how to model standard use cases. Note that the requests that are illustrated in this section
-may be shortened due to readability. The fully functional PLANNING requests are linked and can be
-found [here](working_code_samples.md)
+may be shortened due to readability. The fully functional PLANNING requests can be
+found in the [functional code samples](working_code_samples.md).
 
 ## Production tasks
 
