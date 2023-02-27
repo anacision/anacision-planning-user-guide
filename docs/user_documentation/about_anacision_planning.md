@@ -67,16 +67,22 @@ description of the whole data model.
     * If applicable: required resources to perform setup changes
     * Changeover matrices: Time to change from one resource to another within a resource type (e.g. from small drill to large drill)
 
-### 2. Posting a PLANNING job to the queue
+### 2. Posting a PLANNING request json to the API
 The PLANNING request json can be posted to the PLANNING API through the endpoint ```POST/planning-job```.
-The endpoint parses and validates the request and creates a PLANNING job. The API is connected to a queue 
-where the jobs are being executed one after the other. The posted job is added to the queue
-and will be processed as soon as a computing resource becomes available. Upon posting,
-the endpoint returns a ```job_id``` which is a unique identifier for the PLANNING job. It 
-can be used to check the status of a job and to retrieve the job result once the job has
-been processed successfully. The endpoint also executes a thorough validation of the input format
+The endpoint parses and validates the request by executing a thorough validation of the input format
 and returns meaningful error messages if the format is invalid (e.g. a task is assigned a station that
 has not been defined or has predecessors that are unknown).
+
+If all validations pass, the endpoint creates a PLANNING job. 
+
+The API is connected to a queue where the jobs are being executed one after the other. 
+The posted job is added to the queue and will be processed as soon as a computing resource becomes available. 
+
+Upon posting, the endpoint returns a ```job_id``` which is a unique identifier for the PLANNING job. It 
+can be used to check the status of a job and to retrieve the job result once the job has
+been processed successfully. 
+
+
 
 
 ### 3. Getting the PLANNING job result
