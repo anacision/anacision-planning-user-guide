@@ -50,7 +50,7 @@ description of the whole data model.
 
 * **Open production tasks**: Production tasks that need to be fulfilled. They can be based on client orders or warehouse orders. 
  If there are multiple processing steps within an order, each step needs to be specified as a task. They can be linked
- through predecessor relationships. The task is characterized through:
+ through predecessor relationships. The task is mainly characterized through:
     * Unique id for distinction between tasks
     * Earliest date after which the task can start
     * If applicable: Predecessor tasks that have to be processed directly before this task
@@ -58,9 +58,9 @@ description of the whole data model.
     * Which station can process the task? (OR which capability is required to process this task?)
     * Processing time on all stations that can process the task
     * If applicable: which resources are needed to produce the task?
-* **Processing stations**: Smallest production unit to which production tasks are assigned. Can be one machine, several machines, a manual workstation or a combination of all.
-    * Shift times during which the station can process tasks
-    * Planned idle times during which the station is not available (e.g. for inspection)
+* **Processing stations**: Smallest production unit to which production tasks are assigned. It can be one machine, several machines, a manual workstation or a combination of all. The station is mainly characterized through:
+    * Availability intervals during which the station can process tasks
+    * Planned downtimes during which the station is not available (e.g. for inspection)
 * **Limited resources**: If desired, limited resources can be modeled to avoid that the same resource is planned more often that its availability. The resources can be equipment, tools or personnel.
     * Number of available units for each resource (e.g. one small drill, two large drills)
     * If applicable: shift times during which the resource is available. This is especially
