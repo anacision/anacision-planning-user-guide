@@ -1,0 +1,149 @@
+{
+  "stations": [
+    {
+      "id": "Station_1",
+      "availability": {
+        "is_always_available": true
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 60,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "setup_task_1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_2",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 60,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "setup_task_2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_3",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 60,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "setup_task_3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resource_types": [
+    {
+      "id": "production_on_station_1",
+      "resources": [
+        {
+          "id": "setup_task_1",
+          "has_unlimited_available_units": true,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "deviating_changeover_durations": [
+            {
+              "from_resource": "setup_task_2",
+              "duration_sec": 120
+            },
+            {
+              "from_resource": "setup_task_3",
+              "duration_sec": 60
+            }
+          ],
+          "availability": {
+            "is_always_available": true
+          }
+        },
+        {
+          "id": "setup_task_2",
+          "has_unlimited_available_units": true,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "deviating_changeover_durations": [
+            {
+              "from_resource": "setup_task_1",
+              "duration_sec": 120
+            },
+            {
+              "from_resource": "setup_task_3",
+              "duration_sec": 90
+            }
+          ],
+          "availability": {
+            "is_always_available": true
+          }
+        },
+        {
+          "id": "setup_task_3",
+          "has_unlimited_available_units": true,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "deviating_changeover_durations": [
+            {
+              "from_resource": "setup_task_1",
+              "duration_sec": 200
+            },
+            {
+              "from_resource": "setup_task_2",
+              "duration_sec": 30
+            }
+          ],
+          "availability": {
+            "is_always_available": true
+          }
+        }
+      ]
+    }
+  ],
+  "algorithm_parameters": {
+    "mutation_probability": 0.8,
+    "max_rounds": 20,
+    "n_elitist_parents": 10,
+    "optimization_targets": [
+      {
+        "weight": 1,
+        "target_function": "schedule_length"
+      }
+    ],
+    "population_initialization_method": "heuristic"
+  },
+  "factory_setup": {
+    "factory_identifier": "demo_factory",
+    "task_delay_between_different_stations_sec": 0
+  },
+  "schedule_starts_at": "2022-02-02T08:00:00+00:00"
+}

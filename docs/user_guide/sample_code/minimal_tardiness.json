@@ -1,0 +1,184 @@
+{
+  "stations": [
+    {
+      "id": "Station_1",
+      "availability": {
+        "availability_intervals": [
+          {
+            "interval_starts_at": "08:00",
+            "duration": "PT10H",
+            "occurs_from": "2021-01-03",
+            "occurs_until": "2023-03-02",
+            "repeat_on_days_of_week": [
+              "mon",
+              "tue",
+              "wed",
+              "thu",
+              "fri"
+            ]
+          }
+        ]
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01",
+          "current_mounted_resources": [
+            "small_tool"
+          ]
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-02T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 7200,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "small_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_2",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-03T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 18000,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "large_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_3",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-02T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 7200,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "small_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_4",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-02T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 7200,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "large_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_5",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-03T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 14400,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "small_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_6",
+      "predecessor_task_ids": [],
+      "due_at": "2022-02-03T23:59:59",
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 18000,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "large_tool"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resource_types": [
+    {
+      "id": "tool_for_production",
+      "resources": [
+        {
+          "id": "small_tool",
+          "has_unlimited_available_units": true,
+          "setup_duration_sec": 18000,
+          "removal_duration_sec": 18000,
+          "availability": {
+            "is_always_available": true
+          }
+        },
+        {
+          "id": "large_tool",
+          "has_unlimited_available_units": true,
+          "setup_duration_sec": 18000,
+          "removal_duration_sec": 18000,
+          "availability": {
+            "is_always_available": true
+          }
+        }
+      ]
+    }
+  ],
+  "algorithm_parameters": {
+    "mutation_probability": 0.8,
+    "max_rounds": 200,
+    "n_elitist_parents": 10,
+    "optimization_targets": [
+      {
+        "weight": 1,
+        "target_function": "tardiness"
+      }
+    ],
+    "population_initialization_method": "heuristic"
+  },
+  "factory_setup": {
+    "factory_identifier": "demo_factory",
+    "task_delay_between_different_stations_sec": 0
+  },
+  "schedule_starts_at": "2022-02-02T08:00:00+00:00"
+}

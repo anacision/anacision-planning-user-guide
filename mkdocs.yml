@@ -1,0 +1,16 @@
+site_name: anacision Product Development Docs
+theme:
+  name: readthedocs
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - markdown_include.include:
+      base_path: docs
+nav:
+
+- About anacision PLANNING: 'user_documentation/about_anacision_planning.md'
+- User Guide: 'user_guide/user_guide.md'
+- Functional Code Samples: 'user_guide/working_code_samples.md'
