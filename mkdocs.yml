@@ -1,6 +1,8 @@
 site_name: anacision Product Development Docs
 theme:
-  name: readthedocs
+  name: material
+  features:
+    - content.code.copy
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
