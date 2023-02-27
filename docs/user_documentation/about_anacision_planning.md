@@ -61,7 +61,7 @@ description of the whole data model.
 * **Processing stations**: Smallest production unit to which production tasks are assigned. It can be one machine, several machines, a manual workstation or a combination of all. The station is mainly characterized through:
     * Availability intervals during which the station can process tasks
     * Planned downtimes during which the station is not available (e.g. for inspection)
-* **Limited resources**: If desired, limited resources can be modeled to avoid that the same resource is planned more often that its availability. The resources can be equipment, tools or personnel.
+* **Limited resources**: Resources can be modeled to avoid the same resource being planned for more than its availability. The resources can be equipment, tools or personnel.
     * Number of available units for each resource (e.g. one small drill, two large drills)
     * If applicable: shift times during which the resource is available. This is especially
     relevant for scheduling personnel. They can also be used to model set up tasks between the processing tasks.
