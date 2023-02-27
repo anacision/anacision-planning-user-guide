@@ -1,13 +1,14 @@
 # About anacision PLANNING
 
 anacision PLANNING is a lightweight advanced planning and scheduling (APS) solution which determines
-an automated allocation of production demands and production capacities. It generates optimal production plans that answer the question
+an automated allocation of production demands and production capacities. anacision PLANNING generates 
+optimal production plans that answer the following question:
 
-* What needs to be produced
-* on which machines
-* by which personnel
-* using which equipment
-* to meet the production goals?
+* What needs to be produced...
+  * on which machines...
+  * by which personnel...
+  * using which equipment...
+  * to meet the production goals?
 
 Production goals can be KPIs like equipment utilization, staff utilization or on-time delivery.
 A more detailed discussion how to work with the production goals can be found in the [user guide](../user_guide/user_guide.md#production_goals).
