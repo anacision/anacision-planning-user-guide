@@ -84,10 +84,10 @@ predecessor - successor relationship. As long as both parts are milled before th
 when the milling tasks take place.
 
 ### Setting allowed production windows
-In many planning and scheduling setups, there is some kind of coarse planning or material resource planning that dictates
-the time frame in which the task may be processed. The most common example for this is that the production has to take
+In many planning and scheduling setups, there may be coarse planning or material resource planning that dictates
+the time intervals in which tasks can be processed. The most common example is when the production has to take
 place close to the confirmed due date to avoid building up inventory. At the same time, the procurement of raw materials
-and the start of the processing of these materials need to be coordinated well.
+and the start of the processing of these materials must be well coordinated.
 
 The ```earliest_start_at``` attribute can be used to ensure that a task is not planned before the raw material has been sourced.
 In turn, the ````due_at```` attribute represents the confirmed due date. If possible, the task will be finished before the due date.
