@@ -11,7 +11,7 @@ The production tasks are the production processes that need to be scheduled. The
 to a chain of multiple processing steps (e.g. 1. cutting raw material, 2. milling the raw cut, 3. painting the finished part).
 In this case, each of these steps needs to be modeled as a task and they can be linked through a predecessor successor relationship.
 
-This section highlights some ways of modeling certain use cases. Refer to the PLANNING API documentation ([planning.anacision.ai](planning.anacision.ai))
+This section highlights some ways of modeling certain use cases. Refer to the PLANNING API documentation ([https://planning.anacision.ai/](https://planning.anacision.ai/))
  to get an in depth
 description of the task object's attributes.
 
