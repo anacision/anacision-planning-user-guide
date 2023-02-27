@@ -89,8 +89,7 @@ been processed successfully.
 
 The result of a PLANNING job can be retrieved by its ```job_id```through the endpoint ```GET/planning-job{job_id}```.
 
-It is again a structured json format which includes the optimized production plan.
-It can be retrieved by the job id and contains the following information:
+It includes the optimized production plan with the following information in json format:
 
 * Planned production and setup tasks
     * Planned startdate and -time
