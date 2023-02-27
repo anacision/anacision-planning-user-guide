@@ -10,7 +10,6 @@ markdown_extensions:
   - markdown_include.include:
       base_path: docs
 nav:
-
-- About anacision PLANNING: 'user_documentation/about_anacision_planning.md'
-- User Guide: 'user_guide/user_guide.md'
-- Functional Code Samples: 'user_guide/working_code_samples.md'
+  - About anacision PLANNING: 'user_documentation/about_anacision_planning.md'
+  - User Guide: 'user_guide/user_guide.md'
+  - Functional Code Samples: 'user_guide/working_code_samples.md'
