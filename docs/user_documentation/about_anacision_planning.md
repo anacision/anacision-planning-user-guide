@@ -32,14 +32,14 @@ Generating a production plan with anacision PLANNING requires three steps:
 ![Illustration of possible end to end integration](user_flow.png)*Illustration of a possible end to end integrated planning process.*
 
 
-### 1. Creating a PLANNING request
+### 1. Creating a PLANNING request json
 
-The PLANNING request is the input for each planning job. It is a JSON object that 
+The PLANNING request json is the input for each planning job. It is a JSON object that 
 is based on a standardized data model. Since the cloud-based service is stateless, 
 each request needs to provide all information that is relevant 
 for creating a production plan. This includes master data (such as available machines or processing options),
 as well as dynamic
-data (such as production quantity, demand or due dates).
+data (such as production quantity, demand or due dates). Examples can be found in [functional code samples](../user_guide/working_code_samples.md)
 
 
 #### Required input data
