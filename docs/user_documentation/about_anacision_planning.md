@@ -44,18 +44,20 @@ data (such as production quantity, demand or due dates).
 
 #### Required input data
 
-This section gives a high-level overview of the required data. Refer to the technical API documentation for a detailed 
+This section gives a high-level overview of the required data. Refer to the 
+[technical API documentation](https://planning.anacision.ai/docs) for a detailed 
 description of the whole data model.
 
 * **Open production tasks**: Production tasks that need to be fulfilled. They can be based on client orders or warehouse orders. 
  If there are multiple processing steps within an order, each step needs to be specified as a task. They can be linked
  through predecessor relationships. The task is characterized through:
-    * Due date by which the task needs to be finished.
-    * Which station can process the task? OR Which capability is required to process this task
-    * Processing time on all stations that can process the task
-    * If applicable: which resources are needed to produce the task?
+    * Unique id for distinction between tasks
     * Earliest date after which the task can start
     * If applicable: Predecessor tasks that have to be processed directly before this task
+    * Due date by which the task needs to be finished
+    * Which station can process the task? (OR which capability is required to process this task?)
+    * Processing time on all stations that can process the task
+    * If applicable: which resources are needed to produce the task?
 * **Processing stations**: Smallest production unit to which production tasks are assigned. Can be one machine, several machines, a manual workstation or a combination of all.
     * Shift times during which the station can process tasks
     * Planned idle times during which the station is not available (e.g. for inspection)
