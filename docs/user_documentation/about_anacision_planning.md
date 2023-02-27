@@ -63,9 +63,9 @@ description of the whole data model.
 * **Limited resources**: Resources can be modeled to avoid the same resource being planned for more than its availability. The resources can be equipment, tools or personnel.
     * Number of available units for each resource (e.g. one small drill, two large drills)
     * If applicable: shift times during which the resource is available. This is especially
-    relevant for scheduling personnel. They can also be used to model set up tasks between the processing tasks.
+    relevant for scheduling personnel. They can also be used to model set up tasks between the processing tasks
     * If applicable: required resources to perform setup changes
-    * Changeover matrices: Time to change from one resource to another within a resource type. 
+    * Changeover matrices: Time to change from one resource to another within a resource type (e.g. from small drill to large drill)
 
 ### 2. Posting a PLANNING job to the queue
 The PLANNING request json can be posted to the PLANNING API through the endpoint ```POST/planning-job```.
