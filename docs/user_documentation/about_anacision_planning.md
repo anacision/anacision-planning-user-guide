@@ -29,7 +29,7 @@ Generating a production plan with anacision PLANNING requires three steps:
 3. Getting the PLANNING job result.
 
 
-![Illustration of possible end to end integration](user_flow.png)*Illustraion of a possible end to end integrated planning process.*
+![Illustration of possible end to end integration](user_flow.png)*Illustration of a possible end to end integrated planning process.*
 
 
 ### 1. Creating a PLANNING request
