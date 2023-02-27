@@ -96,7 +96,7 @@ It includes the optimized production plan with the following information in json
     * Planned enddate and -time
     * Planned station
     * Used resources and equipment
-* Production KPIs, e.g.
+* Production KPIs (representatives of production goals), e.g.:
     * Tardiness
     * Makespan
     * Changeover duration
