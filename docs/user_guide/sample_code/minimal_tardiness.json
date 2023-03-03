@@ -127,7 +127,7 @@
       "processing_options": [
         {
           "station": "Station_1",
-          "duration_sec": 18000,
+          "duration_sec": 10800,
           "resource_requirements": [
             {
               "resource_options": [
@@ -146,8 +146,8 @@
         {
           "id": "small_tool",
           "has_unlimited_available_units": true,
-          "setup_duration_sec": 18000,
-          "removal_duration_sec": 18000,
+          "setup_duration_sec": 1800,
+          "removal_duration_sec": 1800,
           "availability": {
             "is_always_available": true
           }
@@ -155,8 +155,8 @@
         {
           "id": "large_tool",
           "has_unlimited_available_units": true,
-          "setup_duration_sec": 18000,
-          "removal_duration_sec": 18000,
+          "setup_duration_sec": 1800,
+          "removal_duration_sec": 1800,
           "availability": {
             "is_always_available": true
           }
@@ -166,12 +166,13 @@
   ],
   "algorithm_parameters": {
     "mutation_probability": 0.8,
-    "max_rounds": 200,
+    "max_rounds": 40,
+    "population_size":200,
     "n_elitist_parents": 10,
     "optimization_targets": [
       {
         "weight": 1,
-        "target_function": "tardiness"
+        "target_function": "tardy_orders"
       }
     ],
     "population_initialization_method": "heuristic"

@@ -19,7 +19,7 @@ description of the task object's attributes.
 
 Multi-stage production scenarios, can be modeled using the ```predecessor_task_ids``` field.
 
-The following examples are NOT functional, as the tasks have no processing options. They only serve the purpose
+The following examples are NOT functional. They only serve the purpose
 of illustrating how the predecessor - successor relationship can be used to model multi-stage production.
 
 ```json hl_lines="12 19"
@@ -350,7 +350,7 @@ This corresponds to three switches between the small tool and the large tool. Si
 target is to reduce the delay, the algorithm has no incentive to further reduce the setup times.
 
 To reduce the setup times, an additional target function can be added to reward plans that have the same
-on-time delivery but with less setup times.
+on-time delivery but with a shorter makespan and thus less setup times.
 
 ```json hl_lines="9"
 {
@@ -361,7 +361,7 @@ on-time delivery but with less setup times.
     },
     {
       "weight": 0.1,
-      "target_function": "resource_change_duration"
+      "target_function": "makespan"
     }
   ]
 }
@@ -375,7 +375,7 @@ optimal in terms of the due date fulfillment, but better in the resource changes
 change could be avoided.
 
 Note that the weights of the target functions indicate the tradeoff between the goals. In this case,
-a small weight for the ```resource_change_duration``` is sufficient, as it should not overshadow the
+a small weight for the ```makespan``` is sufficient, as it should not overshadow the
 optimization of the tardiness. When weighting the resource change duration too heavily, it may be that additional changeovers are avoided at the cost of tasks not being on time.
 
 {!user_guide/sample_images/overshadowing_changeover.html!}
