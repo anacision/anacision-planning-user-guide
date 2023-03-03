@@ -1,0 +1,70 @@
+{
+  "stations": [
+    {
+      "id": "Station_1",
+      "availability": {
+        "availability_intervals": [
+          {
+            "interval_starts_at": "7:00",
+            "duration": "PT08H",
+            "occurs_from": "2021-01-03",
+            "occurs_until": "2023-03-02",
+            "repeat_on_days_of_week": [
+              "mon",
+              "tue",
+              "wed",
+              "thu",
+              "fri"
+            ]
+          }
+        ],
+        "planned_downtimes": [
+          {
+            "duration": "PT01H",
+            "downtime_starts_at": "2021-02-03T8:00:00.000+00:00"
+          }
+        ]
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 7200
+        }
+      ]
+    }
+  ],
+  "algorithm_parameters": {
+    "max_rounds": 20,
+    "population_size": 400,
+    "mutation_probability": 0.8,
+    "patience": 10,
+    "n_elitist_parents": 10,
+    "optimization_targets": [
+      {
+        "weight": 1,
+        "target_function": "schedule_length"
+      }
+    ],
+    "population_initialization_method": "heuristic"
+  },
+  "factory_setup": {
+    "factory_identifier": "demo_factory",
+    "task_delay_between_different_stations_sec": 0,
+    "buffer_in_extraction_duration_sec": 1,
+    "buffer_in_dwell_duration_sec": 1,
+    "buffer_out_dwell_duration_sec": 1,
+    "start_dates_apply_to_setup": false
+  },
+  "schedule_starts_at": "2022-02-02T16:30:00+00:00"
+}

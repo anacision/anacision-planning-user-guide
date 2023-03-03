@@ -1,0 +1,198 @@
+{
+  "stations": [
+    {
+      "id": "Station_1",
+      "availability": {
+        "is_always_available": true
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01",
+          "current_mounted_resources": [
+            "R11"
+          ]
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 20,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "operator_early_shift",
+                "operator_afternoon_shift"
+              ]
+            },
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resource_types": [
+    {
+      "id": "resource_1",
+      "resources": [
+        {
+          "id": "R10",
+          "n_available_units": 2,
+          "setup_duration_sec": 8,
+          "removal_duration_sec": 10,
+          "deviating_changeover_durations": [
+            {
+              "from_resource": "R11",
+              "duration_sec": 200
+            }
+          ],
+          "availability": {
+            "is_always_available": true
+          }
+        },
+        {
+          "id": "R11",
+          "n_available_units": 2,
+          "setup_duration_sec": 7,
+          "removal_duration_sec": 9,
+          "deviating_changeover_durations": [
+            {
+              "from_resource": "R10",
+              "duration_sec": 300
+            }
+          ],
+          "availability": {
+            "is_always_available": true
+          }
+        }
+      ],
+      "setup_resource_requirements_by_station": [
+        {
+          "station": "Station_1",
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "worker_for_setup"
+              ]
+            }
+          ]
+        }
+      ],
+      "release_resource_after_use": false
+    },
+    {
+      "id": "workers_for_processing",
+      "resources": [
+        {
+          "id": "operator_early_shift",
+          "n_available_units": 2,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "availability": {
+            "availability_intervals": [
+              {
+                "interval_starts_at": "06:00",
+                "duration": "PT08H",
+                "occurs_from": "2021-01-03",
+                "occurs_until": "2023-03-02",
+                "repeat_on_days_of_week": [
+                  "mon",
+                  "tue",
+                  "wed",
+                  "thu",
+                  "fri"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "operator_afternoon_shift",
+          "n_available_units": 1,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "availability": {
+            "availability_intervals": [
+              {
+                "interval_starts_at": "15:00",
+                "duration": "PT08H",
+                "occurs_from": "2021-01-03",
+                "occurs_until": "2023-03-02",
+                "repeat_on_days_of_week": [
+                  "mon",
+                  "tue",
+                  "wed",
+                  "thu",
+                  "fri"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "release_resource_after_use": true
+    },
+    {
+      "id": "workers_for_setup",
+      "resources": [
+        {
+          "id": "worker_for_setup",
+          "n_available_units": 1,
+          "setup_duration_sec": 0,
+          "removal_duration_sec": 0,
+          "availability": {
+            "availability_intervals": [
+              {
+                "interval_starts_at": "08:00",
+                "duration": "PT13H",
+                "occurs_from": "2021-01-03",
+                "occurs_until": "2023-03-02",
+                "repeat_on_days_of_week": [
+                  "mon",
+                  "tue",
+                  "wed",
+                  "thu",
+                  "fri"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "release_resource_after_use": true
+    }
+  ],
+  "algorithm_parameters": {
+    "runtime_limit": 900,
+    "max_rounds": 20,
+    "population_size": 400,
+    "mutation_probability": 0.8,
+    "patience": 10,
+    "n_elitist_parents": 10,
+    "optimization_targets": [
+      {
+        "weight": 1,
+        "target_function": "schedule_length"
+      }
+    ],
+    "population_initialization_method": "heuristic"
+  },
+  "factory_setup": {
+    "factory_identifier": "demo_factory",
+    "task_delay_between_different_stations_sec": 0,
+    "buffer_in_extraction_duration_sec": 1,
+    "buffer_in_dwell_duration_sec": 1,
+    "buffer_out_dwell_duration_sec": 1,
+    "start_dates_apply_to_setup": false
+  },
+  "schedule_starts_at": "2022-02-02T16:30:00+00:00"
+}

@@ -1,0 +1,192 @@
+{
+  "stations": [
+    {
+      "id": "Station_1",
+      "availability": {
+        "is_always_available": true
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01",
+          "current_mounted_resources": [
+            "R10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Station_2",
+      "availability": {
+        "is_always_available": true
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01"
+        }
+      ]
+    },
+    {
+      "id": "Station_3",
+      "availability": {
+        "is_always_available": true
+      },
+      "processing_slots": [
+        {
+          "id": "slot_01"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task_1",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 20,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_2",
+          "duration_sec": 20,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_3",
+          "duration_sec": 20,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_2",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 10,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_2",
+          "duration_sec": 10,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_3",
+          "duration_sec": 10,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "task_3",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 15,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_2",
+          "duration_sec": 15,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Station_3",
+          "duration_sec": 15,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resource_types": [
+    {
+      "id": "resource_1",
+      "resources": [
+        {
+          "id": "R10",
+          "n_available_units": 2,
+          "setup_duration_sec": 8,
+          "removal_duration_sec": 10,
+          "availability": {
+            "is_always_available": true
+          }
+        }
+      ]
+    }
+  ],
+  "algorithm_parameters": {
+    "mutation_probability": 0.8,
+        "max_rounds": 20,
+    "n_elitist_parents": 10,
+    "optimization_targets": [
+      {
+        "weight": 1,
+        "target_function": "schedule_length"
+      }
+    ],
+    "population_initialization_method": "heuristic"
+  },
+  "factory_setup": {
+    "factory_identifier": "demo_factory",
+    "task_delay_between_different_stations_sec": 0
+  },
+  "schedule_starts_at": "2022-02-02T08:00:00+00:00"
+}
