@@ -119,7 +119,7 @@ If the PLANNING API is used in a production environment, it is most likely the c
 the time of the scheduling execution, but have tasks that are being executed and resources that are mounted. This needs to 
 be modeled for each production slot within the station.
 
-```json
+```json hl_lines="6 9"
   "processing_slots": [
     {
       "id": "slot_01",
@@ -273,15 +273,15 @@ the relevant resources to each task's processing option.
 
 #### Personnel
 
-Personnel can be characterized through their shift times and skills. In this example, there is one type of worker which is
-a machine operator that can process the tasks. There are two operators in the morning shift and one operator in the afternoon
+Personnel can be characterized through their shift times and skills. In this example, there are two types of workers.
+One type that is a machine operator and can process the tasks, whereas another one can perform the setups. There are two operators in the morning shift and one operator in the afternoon
 shift. This is represented by ```"n_available_units":2``` and ```"n_available_units":1``` respectively.
 Note that the flag ```release_resource_after_use``` is set to ```True``` which indicates that the resources
 do not need to be unmounted but instead are released to perform the next task immediately after the task has ended.
 
 
-```json
-{!user_guide/sample_code/sample_workers.json!lines=43-44 93-142 172-173}
+```json hl_lines="3 55"
+{!user_guide/sample_code/sample_workers.json!lines=66 115-196}
 ```
 [link to fully functional example](working_code_samples.md#code_workers)
 
@@ -307,7 +307,7 @@ setup resource requirements have to be modeled per station. This provides flexib
 are required on different stations (e.g. differently skilled personnel or equipment with different technical specifications.)
 
 ```json
-{!user_guide/sample_code/sample_workers.json!lines=78-89}
+{!user_guide/sample_code/sample_workers.json!lines=101-112}
 ```
 [link to fully functional example](working_code_samples.md#code_workers)
 

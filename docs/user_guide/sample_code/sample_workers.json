@@ -38,6 +38,29 @@
           ]
         }
       ]
+    },
+        {
+      "id": "task_2",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 20,
+          "resource_requirements": [
+            {
+              "resource_options": [
+                "operator_early_shift",
+                "operator_afternoon_shift"
+              ]
+            },
+            {
+              "resource_options": [
+                "R10"
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "resource_types": [
@@ -194,5 +217,5 @@
     "buffer_out_dwell_duration_sec": 1,
     "start_dates_apply_to_setup": false
   },
-  "schedule_starts_at": "2022-02-02T16:30:00+00:00"
+  "schedule_starts_at": "2022-02-02T16:30:00+00:00",
 }

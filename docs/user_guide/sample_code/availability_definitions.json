@@ -42,6 +42,16 @@
           "duration_sec": 7200
         }
       ]
+    },
+    {
+      "id": "task_2",
+      "predecessor_task_ids": [],
+      "processing_options": [
+        {
+          "station": "Station_1",
+          "duration_sec": 7200
+        }
+      ]
     }
   ],
   "algorithm_parameters": {
