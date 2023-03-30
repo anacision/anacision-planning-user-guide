@@ -217,5 +217,5 @@
     "buffer_out_dwell_duration_sec": 1,
     "start_dates_apply_to_setup": false
   },
-  "schedule_starts_at": "2022-02-02T16:30:00+00:00",
+  "schedule_starts_at": "2022-02-02T16:30:00+00:00"
 }
